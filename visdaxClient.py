@@ -10,7 +10,7 @@ class VisdaxClient:
         self.limit = limit_mb * 1024 * 1024
         self.cache_path = Path("~/.visdax_cache").expanduser()
         self.cache_path.mkdir(parents=True, exist_ok=True)
-        self.base_url = "https://api.visdax.ai/api/v1"
+        self.base_url = "https://api.visdax.com/api/v1"
 
     def _get_headers(self):
         return {

@@ -13,18 +13,13 @@ class VisdaxClient:
         self.base_url = "https://api.visdax.com/api/v1"
         
         # Reads the secret directly from the environment where the SDK is running
-        # (e.g., set via 'export VISDAX_INTERNAL_SECRET=...' in terminal or .env)
-        self.internal_secret = os.environ.get("VISDAX_INTERNAL_SECRET")
         
-        if not self.internal_secret:
-            print("Warning: VISDAX_INTERNAL_SECRET not found in environment. Requests may fail.")
 
     def _get_headers(self):
         return {
             "Authorization": f"Bearer {self.api_key}",
             "X-Visdax-Project": self.project,
             "X-Visdax-Bucket": self.bucket,
-            "X-Visdax-SDK-Secret": self.internal_secret  # Passed directly
         }
 
     # ==========================================

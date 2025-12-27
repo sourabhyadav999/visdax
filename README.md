@@ -1,7 +1,7 @@
 # visdax
 Visdax : High-Fidelity Vision SDK
 Unified Vision Restoration and Storage for Developers.
-
+This is Official Repo for visdax.com client.
 Visdax provides a seamless way to store, restore, and serve high-fidelity vision data. Our SDKs are engineered to prioritize performance and cost-efficiency by implementing a Compulsory Local Vault (LRU Cache). This ensures that expensive vision assets are transferred over the network exactly once, drastically reducing egress costs for your host infrastructure. This is Optimized to reduce Client Egress Data to save them from Egress Cost of their Host, please use the Official Version.
 
 

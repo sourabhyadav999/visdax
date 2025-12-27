@@ -7,39 +7,6 @@ Visdax provides a seamless way to store, restore, and serve high-fidelity vision
 
 
 
-Python Example:
-from visdax import VisdaxClient
-
-:- Initialize the client
-client = VisdaxClient(
-    api_key="your_api_key",
-    project="autonomous_driving",
-    bucket="calibration_frames"
-)
-
-:- 1. Submit high-res frames for restoration
-client.submit("frame_001.png")
-
-:- 2. Retrieve restored assets (Automatic 500MB LRU Cache)
-:- This will only download from the server if not already in local storage
-image_paths = client.load_batch(["frame_001", "frame_002"])
-print(f"Assets ready at: {image_paths}")
-
-
-JS Example:
-import { VisdaxClient } from '@visdax/sdk';
-
-const visdax = new VisdaxClient({
-    apiKey: "your_api_key",
-    project: "autonomous_driving",
-    bucket: "calibration_frames"
-});
-
-// Load restored assets directly into your UI
-// Returns a Map of { key: blobUrl } for immediate use in <img> tags
-const assets = await visdax.loadBatch(["frame_001", "frame_002"]);
-
-document.getElementById('my-image').src = assets["frame_001"];
 
 
 

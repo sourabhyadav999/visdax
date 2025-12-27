@@ -2,6 +2,7 @@
 Visdax : High-Fidelity Vision SDK
 Unified Vision Restoration and Storage for Developers.
 This is Official Repo for visdax.com client.
+
 Visdax provides a seamless way to store, restore, and serve high-fidelity vision data. Our SDKs are engineered to prioritize performance and cost-efficiency by implementing a Compulsory Local Vault (LRU Cache). This ensures that expensive vision assets are transferred over the network exactly once, drastically reducing egress costs for your host infrastructure. This is Optimized to reduce Client Egress Data to save them from Egress Cost of their Host, please use the Official Version.
 
 
@@ -9,18 +10,18 @@ Visdax provides a seamless way to store, restore, and serve high-fidelity vision
 Python Example:
 from visdax import VisdaxClient
 
-# Initialize the client
+:- Initialize the client
 client = VisdaxClient(
     api_key="your_api_key",
     project="autonomous_driving",
     bucket="calibration_frames"
 )
 
-# 1. Submit high-res frames for restoration
+:- 1. Submit high-res frames for restoration
 client.submit("frame_001.png")
 
-# 2. Retrieve restored assets (Automatic 500MB LRU Cache)
-# This will only download from the server if not already in local storage
+:- 2. Retrieve restored assets (Automatic 500MB LRU Cache)
+:- This will only download from the server if not already in local storage
 image_paths = client.load_batch(["frame_001", "frame_002"])
 print(f"Assets ready at: {image_paths}")
 
